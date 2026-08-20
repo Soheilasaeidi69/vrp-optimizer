@@ -9,3 +9,16 @@ passlib[bcrypt]==1.7.4
 python-multipart==0.0.9
 feloopy
 ortools
+joblib
+gputil
+infix
+matplotlib
+nbformat
+openpyxl
+pandas
+psutil
+py-cpuinfo
+tabulate
+xlsxwriter
+tqdm
+rich
