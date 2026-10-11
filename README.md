@@ -36,12 +36,5 @@ npm run dev
 ```
 Open the Vite dev server URL - it proxies `/api` to `localhost:8000`.
 
-## Known gap to check before relying on results
 
-`extract_results()` in `model_template.py` assumes FeLooPy exposes
-solved values via `mdl.get_obj(i)` / `mdl.get("varname")`. That's the
-documented pattern, but if your installed FeLooPy version names things
-differently, run one solve, inspect `dir(mdl)` after `flp.search(...)`
-returns, and adjust that one function - nothing else needs to change.
-Open the Vite dev server URL - it proxies /api to localhost:8000.
 
