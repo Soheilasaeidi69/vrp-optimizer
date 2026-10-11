@@ -9,11 +9,11 @@ The tool allows users to configure model scenarios, run optimization experiments
 
 **Web application:** https://vrp-optimizer.vercel.app
 
-# Software Overview
+## Software Overview
 
 The software provides a web-based interface for running multi-objective freight transportation optimization experiments.
 
-Users can configure transportation scenarios, execute the FeLooPy optimization model, and review routing solutions along with transportation cost and risk values.
+Users can configure transportation scenarios, run the optimization model, and review routing solutions along with transportation cost and risk values.
 
 The software combines a React frontend with a Python FastAPI backend for model execution and results presentation.
 
