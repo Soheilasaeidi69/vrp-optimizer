@@ -1,8 +1,14 @@
-# Routing optimizer web app
+# Multi-Objective Freight Routing Optimization Tool
 
-A starter full-stack scaffold around your FeLooPy routing/inventory model
-(`main-code-kt-ss.py`). It's built so you can go from "runs on my laptop"
-to "production tool for multiple clients" without a rewrite.
+An interactive research software application developed by Soheila Saeidi at Florida Atlantic University.
+
+This application provides a web-based interface for a multi-period, multi-vehicle freight transportation optimization model developed using FeLooPy. The model considers transportation costs, route-related risk, and pickup-and-delivery operations.
+
+The tool allows users to configure model scenarios, run optimization experiments, and examine computed routing solutions through an interactive dashboard.
+
+**Researcher:** Soheila Saeidi, Florida Atlantic University
+
+**Web application:** https://vrp-optimizer.vercel.app
 
 ## How it fits together
 
