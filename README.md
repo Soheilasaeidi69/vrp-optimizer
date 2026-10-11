@@ -2,8 +2,7 @@
 
 An interactive research software application developed by Soheila Saeidi at Florida Atlantic University.
 
-This application provides a web-based interface for a multi-period, multi-vehicle freight transportation optimization model developed using FeLooPy. The model considers transportation costs, route-related risk, and pickup-and-delivery operations.
-
+This application provides a web-based interface for a multi-period, multi-vehicle freight transportation optimization model that considers transportation costs, route-related risk, and pickup-and-delivery operations. The optimization model was formulated by Soheila Saeidi and is implemented with the open-source FeLooPy library.
 The tool allows users to configure model scenarios, run optimization experiments, and examine computed routing solutions through an interactive dashboard.
 
 **Researcher:** Soheila Saeidi, Florida Atlantic University
