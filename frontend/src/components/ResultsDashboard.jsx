@@ -1,4 +1,3 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import RouteNetwork from './RouteNetwork.jsx'
 
 const STATUS_CLASS = {
@@ -20,7 +19,6 @@ export default function ResultsDashboard({ status, result, coords }) {
   const isDone = status.status === 'completed'
   const isFailed = status.status === 'failed'
 
-  const inventorySeries = buildInventorySeries(result?.inventory_levels)
 
   return (
     <div>
@@ -64,24 +62,7 @@ export default function ResultsDashboard({ status, result, coords }) {
 
           <RouteNetwork routes={result?.routes} customCoords={coords} />
 
-          <div className="panel" style={{ marginBottom: 20 }}>
-            <h2>Inventory levels over time</h2>
-            {inventorySeries.length ? (
-              <ResponsiveContainer width="100%" height={240}>
-                <LineChart data={inventorySeries}>
-                  <CartesianGrid stroke="#2a3a48" strokeDasharray="3 3" />
-                  <XAxis dataKey="period" stroke="#8b9bab" fontSize={12} />
-                  <YAxis stroke="#8b9bab" fontSize={12} />
-                  <Tooltip contentStyle={{ background: '#16212c', border: '1px solid #2a3a48' }} />
-                  <Line type="monotone" dataKey="level" stroke="#ff9f45" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
-            ) : (
-              <div className="empty-state">No inventory data returned.</div>
-            )}
-          </div>
-
-          <div className="panel">
+                    <div className="panel">
             <h2>Selected routes ({result?.routes?.length ?? 0})</h2>
             {result?.routes?.length ? (
               groupByPeriod(result.routes).map(([period, rows]) => (
@@ -127,13 +108,3 @@ function groupByPeriod(routes) {
   return Object.entries(byPeriod).sort((a, b) => Number(a[0]) - Number(b[0]))
 }
 
-function buildInventorySeries(levels) {
-  if (!levels?.length) return []
-  const byPeriod = {}
-  for (const l of levels) {
-    byPeriod[l.period] = (byPeriod[l.period] ?? 0) + l.level
-  }
-  return Object.entries(byPeriod)
-    .sort((a, b) => Number(a[0]) - Number(b[0]))
-    .map(([period, level]) => ({ period, level }))
-}
